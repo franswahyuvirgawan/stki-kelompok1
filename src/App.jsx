@@ -1,12 +1,14 @@
 import "./App.scss";
+import "./index.css";
 import { useRef, useEffect } from "react";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { gsap } from "gsap";
 
 // Assets
 import statue from "./images/statue.jpg";
 import arrow from "./images/arrow-right.svg";
 
-function App() {
+function Home() {
   let app = useRef(null);
   let image = useRef(null);
   let text = useRef(null);
@@ -16,7 +18,8 @@ function App() {
     const headlineSecond = text.children[0].children[1].children[0];
     const headlineThird = text.children[0].children[2].children[0];
     const contentP = text.children[1];
-    const contentB = text.children[2];
+    const contentI = text.children[2];
+    const contentB = text.children[3];
 
     gsap.fromTo(
       [headlineFirst, headlineSecond, headlineThird],
@@ -34,7 +37,7 @@ function App() {
     );
 
     gsap.fromTo(
-      [contentP, contentB],
+      [contentP, contentI, contentB],
       {
         opacity: 0,
         y: 20,
@@ -110,12 +113,18 @@ function App() {
                 you want to search for, and the application will display the
                 search results instantly.
               </p>
-              <div className="btn-row">
-                <button className="explore-button">
-                  Explore
-                  <div className="arrow-icon">
-                    <img src={arrow} alt="row" />
-                  </div>
+              <div className="flex lg:flex-row gap-[8px] items-start flex-col">
+                <input
+                  class="border rounded w-full py-2 px-3 text-gray-700 focus:outline-none"
+                  id="username"
+                  type="text"
+                  placeholder="Find Word"
+                />
+                <button
+                  class="bg-[#323232] w-full  text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                  type="button"
+                >
+                  Search
                 </button>
               </div>
             </div>
@@ -130,5 +139,15 @@ function App() {
     </div>
   );
 }
+
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="*" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
 export default App;

@@ -14,11 +14,11 @@ html {
   // visibility: hidden;
 
   .container {
-    margin-left: 40px;
-    margin-right: 40px;
-    margin-top: 40px;
     .hero-inner {
       flex-direction: column;
+      margin-left: 40px;
+      margin-right: 40px;
+      margin-top: 40px;
       display: flex;
       gap: 32px;
       .hero-content {
@@ -40,7 +40,7 @@ html {
             line-height: 24px;
             font-weight: 300;
             padding-right: 48px;
-            margin-bottom: 56px;
+            margin-bottom: 32px;
           }
           .btn-row {
             position: relative;
@@ -135,7 +135,7 @@ html {
               line-height: 24px;
               font-weight: 300;
               padding-right: 48px;
-              margin-bottom: 56px;
+              margin-bottom: 32px;
             }
             .btn-row {
               position: relative;
