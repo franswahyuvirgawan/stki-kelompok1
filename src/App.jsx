@@ -121,7 +121,7 @@ function Home() {
                   placeholder="Find Word"
                 />
                 <button
-                  class="bg-[#323232] w-full  text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                  class="bg-[#323232] lg:w-min w-full text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                   type="button"
                 >
                   Search
